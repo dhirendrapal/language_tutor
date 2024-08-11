@@ -8,8 +8,11 @@ import wave
 import openai
 import os
 from openai import OpenAI
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
+api_key = os.getenv('OPENAI_API_KEY')
+if not api_key:
+    raise ValueError("The OpenAI API key is not set. Please check the environment variable 'OPENAI_API_KEY'.")
+client = OpenAI(api_key=api_key)
 
 
 def speech_to_text(file_path):
