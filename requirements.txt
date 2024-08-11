@@ -1,0 +1,6 @@
+streamlit==1.37.1
+sounddevice==0.4.7
+openai==1.40.3
+PyAudio==0.2.14
+
+# sudo apt-get install portaudio19-dev
