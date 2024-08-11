@@ -3,7 +3,11 @@ import os
 import openai
 import config
 from openai import OpenAI
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+api_key = os.getenv('OPENAI_API_KEY')
+if not api_key:
+    raise ValueError("The OpenAI API key is not set. Please check the environment variable 'OPENAI_API_KEY'.")
+client = OpenAI(api_key=api_key)
 
 
 def generate_random_sentence():
